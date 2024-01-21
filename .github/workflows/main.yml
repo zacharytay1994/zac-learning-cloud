@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
+        uses: ./my-actions/hello-world
         id: hello
         with:
           who-to-greet: 'Zachary Tay'

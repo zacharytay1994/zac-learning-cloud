@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say_thanks_job:
+    runs-on: ubuntu-latest
+    name: Says thank you on a push to main
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Say thanks step
+        uses: ./my-actions/on-push-say-thanks
+        id: thanks
+      # Use the output from the `thanks` step
+      - name: Prints the thank you message
+        run: echo "${{ steps.thanks.outputs.message }}"

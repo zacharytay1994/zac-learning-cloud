@@ -1,0 +1,9 @@
+# action.yml
+name: 'on-push-say-thanks'
+description: 'says thanks when a push action is met'
+outputs:
+  message: # id of output
+    description: 'The thank you message to print'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
